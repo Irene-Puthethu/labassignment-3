@@ -48,7 +48,7 @@ public:
         Node * current = head;
         Node * last;
 
-        cout<<"True order: ";
+        cout<<"First order: ";
         while(current != NULL){
             cout<<current->data<<"->";
             last = current;
@@ -81,7 +81,7 @@ public:
 		//create  a node
 		Node *temp = new Node;
 		temp -> data = value;
-		//move pointers like magic
+		//move pointers 
 		temp->next = current->next;
 		current->next = temp;
 		temp->pre=current;
@@ -107,9 +107,6 @@ public:
 			delete current;
 		}
 
-		
-
-
 	void deletAt(int pos){
 		//reach the lace before pos
 		Node * current = head;
@@ -122,9 +119,9 @@ public:
 		  		current = current->next;
 		 	}
 			Node * previous= current->pre; // previous is behind the node to be deleted
-			Node * agla = current->next;	//agla is after the node to be deleted
+			Node * prepre = current->next;	//prepre is after the node to be deleted
 			previous->next=current->next;
-			agla->pre=previous;
+			prepre->pre=previous;
 			delete current;
 		}
 
